@@ -1,0 +1,91 @@
+{% extends 'admin_base.html' %} {% block body %}
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0">{{table_name}}</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Admin</a></li>
+                                        <li class="breadcrumb-item active">{{table_name}}</li>
+                                    </ol>
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-auto" style="margin: 10px;">
+                    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+                    <div class="alert alert-success alert-dismissable" role="alert" id="inside_alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="close">&nbsp;<span aria-hidden="true">x</span></button>
+                        {{message}}
+                    </div>
+                    {% endfor %} {% endif %} {% endwith %}
+                </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            {% if all_response and all_keys %}
+                            <table class="table">
+                              <thead>
+                              {% for var in all_keys %}
+                              <tr>
+                                {% for var1 in var %}
+                                  <th scope="col">{{var1}}</th>
+                              {% endfor %}
+                              </tr>
+                              {% endfor %}
+                              </thead>
+                              <tbody>
+                              {% for em in all_response %}
+                                <tr>
+                                    {% for em1 in em %}
+                                  <td>{{em1}}</td>
+                                    {% endfor %}
+                                </tr>
+                              {% endfor %}
+                              </tbody>
+                            </table>
+                            {% else %}
+                            <p>"Email Data is not availble this website"</p>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>document.write(new Date().getFullYear())</script> © Code Scatter.
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end d-none d-sm-block">
+                                Design & Develop by Code Scatter
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- end main content-->
+
+{% endblock %}

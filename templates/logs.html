@@ -1,0 +1,6 @@
+<html>
+<h1> Log Viewer <a href="/home"><p class="btn btn-primary">Home</p></a></h1>
+{% for line in lines %}
+    {{loop.index}} - {{line}} <br>
+{% endfor %}
+</html>

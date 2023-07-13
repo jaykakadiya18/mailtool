@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume builder</title>
+</head>
+<body>
+  <div class="heading">
+    <p>Your website was deployed</p>
+      {% if temp1 %}
+    <p hidden>You have selected theme</p>
+      {% else %}
+      <p>please first select your theme</p>
+      <a href="/theme_selection">Theme selection</a>
+      {% endif %}
+  </div>
+</body>
+</html>

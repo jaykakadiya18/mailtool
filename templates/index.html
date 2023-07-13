@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Email Sending Tool</title>
+    <link rel="shortcut icon" href="/static/email.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body style="background-image: url('static/pexels-photo-1591062.jpeg'); background-repeat: no-repeat; background-size: cover;">
+    <div class="main_divicion"> 
+        <div class="col-md-auto" style="margin: 10px;">
+                    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+                    <div class="alert alert-success alert-dismissable" role="alert" id="inside_alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="close">&nbsp;<span aria-hidden="true">x</span></button>
+                        {{message}}
+                    </div>
+                    {% endfor %} {% endif %} {% endwith %}
+                </div>
+        <div class="row" style="padding: 0px; margin: 0px;">
+            <div class="col-3"></div>
+            <div class="col-6" id="main_section" style="margin-top: 30px; margin-bottom: 30px; background-color: {{session['color']}}; padding: 50px 30px; box-shadow: 5px 5px 5px #000;">
+                <center><a href="/home"><img src="static/main_logo.png" width="320px" height="100px" style="margin-bottom: 20px;"></a></center>
+                    <center><p style="color: red;"><b>Note: </b> If you are using Gmail, Outlook and Yahoo server don't required Port and Host</p></center><br>
+                    
+                    <form class="row g-3" action="/process" method="POST" enctype="multipart/form-data">
+                        <div class="col-md-6">
+                            <input type="text" name="host" class="form-control" placeholder="Enter your server host id">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="port" class="form-control" placeholder="Enter your server port number">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" name="username" class="form-control" placeholder="Enter your email id" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="password" name="password" class="form-control" placeholder="Enter your password" required>
+                        </div>
+                        <div class="col-12">
+                            <textarea name="subject" class="form-control" placeholder="Enter your Subject" required></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <p>* Message File</p>
+                            <input type="file" name="message_file" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <p>* Mail File</p>
+                            <input type="file" name="mail_file" class="form-control" required>
+                        </div>
+                        <div class="col-12">
+                            <p>* Attachment File</p>
+                            <input type="file" name="attachment_file" class="form-control" multiple required>
+                        </div>
+                        <div class="col-12" style="margin-top: 30px;">
+                          <button type="submit" class="form-control btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </form>
+                <div class="mt-2 text-center">
+                    <a href="/view_logs"><p class="btn btn-outline-primary form-control">View Logs</p></a><br>
+                    <a href="/download_logs"><p class="btn btn-outline-primary form-control">Download Logs</p></a>
+                    <a href="/user_admin_panel"><p class="btn btn-outline-primary form-control">User admin panel</p></a>
+                    <a href="/logout"><p class="btn btn-outline-primary form-control">Logout</p></a>
+                    {% if role_main %}
+                    <a href="/admin_panel"><p class="btn btn-outline-primary form-control">Admin panel</p></a>
+                    {% else %}
+                    <p hidden>nothing</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>

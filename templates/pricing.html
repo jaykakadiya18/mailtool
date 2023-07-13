@@ -1,0 +1,249 @@
+{% extends 'base.html' %} {% block body %}
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0">Product Pricing</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
+                                        <li class="breadcrumb-item active">Pricing</li>
+                                    </ol>
+                                </div>
+
+                            </div>
+                            <div class="col-md-auto" style="margin: 10px;">
+                    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+                    <div class="alert alert-success alert-dismissable" role="alert" id="inside_alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="close">&nbsp;<span aria-hidden="true">x</span></button>
+                        {{message}}
+                    </div>
+                    {% endfor %} {% endif %} {% endwith %}
+                </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-lg-4">
+                            <div class="text-center mb-4 pb-2">
+                                <h4 class="fw-semibold fs-22">Product Features</h4>
+                                <p class="text-muted mb-4 fs-15">Get & Use Product Features with your plans.</p>
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card pricing-box text-center">
+                                <div class="row g-0">
+                                    <div class="col-lg-6">
+                                        <div class="card-body h-100">
+                                            <div>
+                                                <h5 class="mb-1">Starter</h5>
+                                                <p class="text-muted">Starter plans</p>
+                                            </div>
+
+                                            <div class="py-4">
+                                                <h2><sup><small></small></sup> <span class="fs-13 text-muted"> Free</span></h2>
+                                            </div>
+
+                                            <div class="text-center plan-btn mt-2">
+                                                <a href="/product_form" class="btn btn-success w-sm waves-effect waves-light" hidden>Get Plan</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                    <div class="col-lg-6">
+                                        <div class="card-body border-start mt-4 mt-lg-0">
+                                            <div class="card-header bg-light">
+                                                <h5 class="fs-15 mb-0">Plan Features:</h5>
+                                            </div>
+                                            <div class="card-body pb-0">
+                                                <ul class="list-unstyled vstack gap-3 mb-0">
+                                                    <li>Product Customization: <span class="text-success fw-semibold">No</span></li>
+                                                    <li>Support: <span class="text-success fw-semibold">No</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                </div>
+                                <!--end row-->
+                            </div>
+                        </div>
+                        <!--end row-->
+
+<!--                        <div class="col-lg-6">-->
+<!--                            <div class="card pricing-box ribbon-box ribbon-fill text-center">-->
+<!--                                <div class="ribbon ribbon-primary">New</div>-->
+<!--                                <div class="row g-0">-->
+<!--                                    <div class="col-lg-6">-->
+<!--                                        <div class="card-body h-100">-->
+<!--                                            <div>-->
+<!--                                                <h5 class="mb-1">Silvar</h5>-->
+<!--                                                <p class="text-muted">Beginner plans</p>-->
+<!--                                            </div>-->
+
+<!--                                            <div class="py-4">-->
+<!--                                                <h2><sup><small>$</small></sup>20 <span class="fs-13 text-muted">/Per month</span></h2>-->
+<!--                                            </div>-->
+
+<!--                                            <div class="text-center plan-btn mt-2">-->
+<!--                                                <a href="/product_form" class="btn btn-success w-sm waves-effect waves-light">Get Plan</a>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;end col&ndash;&gt;-->
+<!--                                    <div class="col-lg-6">-->
+<!--                                        <div class="card-body border-start mt-4 mt-lg-0">-->
+<!--                                            <div class="card-header bg-light">-->
+<!--                                                <h5 class="fs-15 mb-0">Plan Features:</h5>-->
+<!--                                            </div>-->
+<!--                                            <div class="card-body pb-0">-->
+<!--                                                <ul class="list-unstyled vstack gap-3 mb-0">-->
+<!--                                                    <li>Email Scrapper: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                    <li>Phone-Number Scrapper: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                    <li>Content Scrapper: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                    <li>SEO External Scrapper: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                    <li>Full Scrapping Tool: <span class="text-success fw-semibold">No</span></li>-->
+<!--                                                    <li>Product Customization: <span class="text-success fw-semibold">No</span></li>-->
+<!--                                                    <li>Support: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                </ul>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;end col&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash;end row&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash;end row&ndash;&gt;-->
+
+<!--                        <div class="col-lg-6">-->
+<!--                            <div class="card pricing-box ribbon-box ribbon-fill text-center">-->
+<!--                                <div class="ribbon ribbon-primary">New</div>-->
+<!--                                <div class="row g-0">-->
+<!--                                    <div class="col-lg-6">-->
+<!--                                        <div class="card-body h-100">-->
+<!--                                            <div>-->
+<!--                                                <h5 class="mb-1">Gold</h5>-->
+<!--                                                <p class="text-muted">Enterprise plans</p>-->
+<!--                                            </div>-->
+
+<!--                                            <div class="py-4">-->
+<!--                                                <h2><sup><small>$</small></sup>50 <span class="fs-13 text-muted">/Per month</span></h2>-->
+<!--                                            </div>-->
+
+<!--                                            <div class="text-center plan-btn mt-2">-->
+<!--                                                <a href="/product_form" class="btn btn-success w-sm waves-effect waves-light">Get Plan</a>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;end col&ndash;&gt;-->
+<!--                                    <div class="col-lg-6">-->
+<!--                                        <div class="card-body border-start mt-4 mt-lg-0">-->
+<!--                                            <div class="card-header bg-light">-->
+<!--                                                <h5 class="fs-15 mb-0">Plan Features:</h5>-->
+<!--                                            </div>-->
+<!--                                            <div class="card-body pb-0">-->
+<!--                                                <ul class="list-unstyled vstack gap-3 mb-0">-->
+<!--                                                    <li>Email Scrapper: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                    <li>Phone-Number Scrapper: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                    <li>Content Scrapper: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                    <li>SEO External Scrapper: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                    <li>Full Scrapping Tool: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                    <li>Product Customization: <span class="text-success fw-semibold">No</span></li>-->
+<!--                                                    <li>Support: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                </ul>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;end col&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash;end row&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash;end col&ndash;&gt;-->
+
+<!--                        <div class="col-lg-6">-->
+<!--                            <div class="card pricing-box text-center">-->
+<!--                                <div class="row g-0">-->
+<!--                                    <div class="col-lg-6">-->
+<!--                                        <div class="card-body h-100">-->
+<!--                                            <div>-->
+<!--                                                <h5 class="mb-1">Platinum</h5>-->
+<!--                                                <p class="text-muted">Unlimited plans</p>-->
+<!--                                            </div>-->
+<!--                                            <div class="py-4">-->
+<!--                                                <h2><sup><small>$</small></sup>100 <span class="fs-13 text-muted">/Per month</span></h2>-->
+<!--                                            </div>-->
+
+<!--                                            <div class="text-center plan-btn mt-2">-->
+<!--                                                <a href="/product_form" class="btn btn-success w-sm waves-effect waves-light">Get Plan</a>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;end col&ndash;&gt;-->
+<!--                                    <div class="col-lg-6">-->
+<!--                                        <div class="card-body border-start mt-4 mt-lg-0">-->
+<!--                                            <div class="card-header bg-light">-->
+<!--                                                <h5 class="fs-15 mb-0">Plan Features:</h5>-->
+<!--                                            </div>-->
+<!--                                            <div class="card-body pb-0">-->
+<!--                                                <ul class="list-unstyled vstack gap-3 mb-0">-->
+<!--                                                    <li>Email Scrapper: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                    <li>Phone-Number Scrapper: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                    <li>Content Scrapper: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                    <li>SEO External Scrapper: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                    <li>Full Scrapping Tool: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                    <li>Product Customization: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                    <li>Support: <span class="text-success fw-semibold">Yes</span></li>-->
+<!--                                                </ul>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;end col&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash;end row&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>document.write(new Date().getFullYear())</script> © Code Scatter.
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end d-none d-sm-block">
+                                Design & Develop by Code Scatter
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- end main content-->
+
+{% endblock %}

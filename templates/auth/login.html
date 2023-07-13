@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- Mirrored from themesbrand.com/velzon/html/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Oct 2022 14:03:46 GMT -->
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Email sending Tool</title>
+    <meta name="viewport">
+    <link rel="shortcut icon" href="/static/email.png">
+    <!-- App favicon -->
+    <link rel="stylesheet" href="/static/login_page/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/static/login_page/css/style.css">
+
+</head>
+
+<body>
+    <div class="main-content">
+
+        <div class="page-content">
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- end page title -->
+                <div class="main">
+
+                    <!-- Sing in  Form -->
+                    <section class="sign-in" style="margin-top: -100px; margin-bottom: -80px; padding-bottom: 0px;">
+                        <div class="container"><center>
+                            <div class="col-md-auto" style="margin: 10px;">
+                                {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+                                <div class="alert alert-success alert-dismissable" role="alert" id="inside_alert" style="background-color: red; color: #fff; font-weight: 400; font-size: 17px;">
+                                    <!-- <button type="button" class="close" data-dismiss="alert" aria-label="close">&nbsp;<span
+                                            aria-hidden="true">x</span></button> -->
+                                    {{message}}
+                                </div>
+                                {% endfor %} {% endif %} {% endwith %}
+                            </div></center>
+                            <div class="signin-content">
+                                <div class="signin-image">
+                                    <figure><img src="/static/login_page/images/signin-image.jpg" alt="sing up image">
+                                    </figure>
+                                </div>
+
+                                <div class="signin-form">
+                                    <h2 class="form-title">Login</h2>
+                                    <form method="POST" action="/login" class="register-form" id="login-form">
+                                        <div class="form-group">
+                                            <label for="your_name"><i
+                                                    class="zmdi zmdi-account material-icons-name"></i></label>
+                                            <input type="text" name="username" id="your_name"
+                                                placeholder="Enter your name" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                            <input type="text" name="pwd" id="your_pass"
+                                                placeholder="Enter your api key" required />
+                                        </div>
+                                        <div class="form-group form-button">
+                                            <input type="submit" name="signin" id="signin" class="form-submit"
+                                                value="Login" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+            </div>
+            <!-- container-fluid -->
+        </div>
+        <!-- End Page-content -->
+
+    </div>
+    <!-- end main content-->
+
+</body>
+
+</html>
